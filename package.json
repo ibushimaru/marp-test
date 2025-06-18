@@ -1,0 +1,23 @@
+{
+  "name": "awesome-marp-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "marp -w --html -s slides",
+    "prebuild": "rm -rf dist && mkdir -p dist && cp -r slides/* dist",
+    "build": "marp dist --image png && marp dist",
+    "new": "scripts/new",
+    "check": "scripts/check"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.0",
+    "markdown-it-attrs": "^4.3.1",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-prism": "^3.0.0"
+  }
+}

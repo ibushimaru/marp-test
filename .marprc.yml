@@ -1,0 +1,3 @@
+engine: engine.mjs
+theme: themes/minimalTheme.css
+html: true

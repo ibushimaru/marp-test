@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p slides/$1
+cp -r template/* slides/$1
+
+sed -i "s|{{PATH}}|$1|" slides/$1/index.md

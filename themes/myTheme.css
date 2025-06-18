@@ -1,0 +1,168 @@
+/* @theme myTheme */
+
+@import 'default';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-darcula.min.css');
+
+/* Custom font configuration for BIZ UDPGothic */
+@font-face {
+  font-family: 'FORM UDPGothic';
+  src: url('./fonts/FORMUDPGothic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FORM UDPGothic';
+  src: url('./fonts/FORMUDPGothic-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+section {
+  font-family: 'FORM UDPGothic', 'BIZ UDPGothic', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'FORM UDPGothic', 'BIZ UDPGothic', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+}
+
+code, pre {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Text size utilities */
+.text-xl {
+  font-size: 1.25em;
+}
+.text-lg {
+  font-size: 1.125em;
+}
+.text-sm {
+  font-size: .875em;
+}
+.text-xs {
+  font-size: .75em;
+}
+
+/* Color utilities */
+.red {
+  color: #e74c3c;
+}
+.blue {
+  color: #3498db;
+}
+.green {
+  color: #2ecc71;
+}
+.yellow {
+  color: #f1c40f;
+}
+
+/* Margin utilities */
+.mt-1 {
+  margin-top: 1em;
+}
+.mt-2 {
+  margin-top: 2em;
+}
+.mb-1 {
+  margin-bottom: 1em;
+}
+.mb-2 {
+  margin-bottom: 2em;
+}
+
+/* Column layout utility */
+.col {
+  display: flex;
+  gap: 1rem;
+}
+.col > * {
+  flex: 1;
+}
+
+/* Code block with filename */
+code[data-name] {
+  position: relative;
+  margin-top: 44px;
+  padding-top: 4px;
+}
+code[data-name]::before {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  padding: .25em .75em;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  content: attr(data-name);
+  font-size: .75em;
+  background: var(--color-dimmed);
+}
+
+/* Mark element styling */
+mark {
+  background-color: transparent;
+  font-weight: inherit;
+}
+
+/* Design Principles Color System */
+:root {
+  --color-primary: #2C3E50;      /* メインテキスト */
+  --color-secondary: #7F8C8D;    /* サブテキスト */
+  --color-accent-orange: #FF6B35; /* メインカラー：オレンジ（重要・ポジティブ） */
+  --color-accent-blue: #3498DB;   /* アクセントカラー：青（否定的・対比） */
+  --color-background: #FFFFFF;    /* 背景 */
+  --color-surface: #F8F9FA;       /* セクション背景 */
+  --color-border: #E1E4E8;        /* 境界線 */
+}
+
+/* Typography utilities */
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Color utilities aligned with design principles */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent-orange {
+  color: var(--color-accent-orange);
+}
+
+.text-accent-blue {
+  color: var(--color-accent-blue);
+}
+
+/* Opacity utilities */
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+/* Semantic classes for design principles */
+.important {
+  color: var(--color-accent-orange);
+  font-weight: 700;
+}
+
+.negative {
+  color: var(--color-accent-blue);
+  font-weight: 700;
+}
+
+.positive {
+  color: var(--color-accent-orange);
+}
