@@ -1,3 +1,6 @@
 engine: engine.mjs
 theme: themes/minimalTheme.css
 html: true
+pdf: true
+pdfNotes: true
+pdfOutlines: true
