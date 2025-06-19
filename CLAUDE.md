@@ -240,17 +240,39 @@ Markdownテキストに直接CSSクラスを適用できます。
    marp slides/your-presentation/index.md --pdf
    ```
 
-4. **PNG生成（必要な場合）**
+4. **PDFバージョン管理（推奨）**
    ```bash
-   # PDFから150 DPI PNG生成
-   pdftoppm -png -r 150 slides/your-presentation/index.pdf slides/your-presentation/slide
+   # pdf-versionsディレクトリを作成
+   mkdir -p slides/your-presentation/pdf-versions
    
-   # 高解像度が必要な場合は300 DPI
-   pdftoppm -png -r 300 slides/your-presentation/index.pdf slides/your-presentation/slide-hires
+   # タイムスタンプ付きでPDFを保存
+   cp slides/your-presentation/index.pdf \
+      "slides/your-presentation/pdf-versions/$(date +%Y%m%d_%H%M%S)_index.pdf"
+   ```
+   
+   推奨ディレクトリ構成：
+   ```
+   slides/your-presentation/
+   ├── index.md          # ソースファイル
+   ├── index.pdf         # 最新のPDF
+   ├── index.html        # HTML出力
+   └── pdf-versions/     # PDFバージョン管理
+       ├── 20241219_143000_index.pdf
+       ├── 20241220_091500_index.pdf
+       └── ...
    ```
 
-5. **最終確認**
-   - 生成されたPDF/PNGを確認
+5. **PNG生成（必要な場合のみ）**
+   ```bash
+   # PDFから150 DPI PNG生成（一時的な用途）
+   pdftoppm -png -r 150 slides/your-presentation/index.pdf slides/your-presentation/slide
+   
+   # 使用後は削除を推奨
+   rm slides/your-presentation/slide-*.png
+   ```
+
+6. **最終確認**
+   - 生成されたPDFを確認
    - 問題があればMarkdownに戻って修正
 
 ### Markdownでの注意点
@@ -353,3 +375,40 @@ Markdownテキストに直接CSSクラスを適用できます。
 3. 解決策の実施（`<br>`タグの追加）
 4. 結果の確認（修正版PNG生成）
 5. 知識の文書化（CLAUDE.mdへの記録）
+
+## 参考デザイン分析：Loglass社のスライド
+
+### 優れたB2Bプレゼンテーションデザインの要素
+
+2024年12月19日、Loglass社のCompany Deckを分析し、以下の要素を発見：
+
+#### 1. デザイン原則
+- **余白の大胆な活用**：スライドの30-40%を余白として確保
+- **左寄せレイアウト**：情報を左側に集中させ、右側に余裕を持たせる
+- **一貫したビジュアルアイデンティティ**：波形パターンをブランド要素として全体で使用
+
+#### 2. カラーパレット
+- **メインカラー**：鮮やかなブルー（#0066FF系）
+- **背景**：純白で清潔感
+- **テキスト**：濃いグレー/黒で高い可読性
+- **アクセント**：ブルー系グラデーション
+
+#### 3. タイポグラフィの階層
+- 特大見出し：60-80pt（インパクト）
+- 大見出し：40-50pt（セクションタイトル）
+- 中見出し：24-30pt（サブタイトル）
+- 本文：14-18pt（説明文）
+- キャプション：10-12pt（注釈）
+
+#### 4. 情報の視覚化
+- **シンプルなチャート**：棒グラフ、折れ線グラフ
+- **概念図**：循環図で抽象的な概念を表現
+- **実機イメージ**：製品のモックアップ画像
+- **プロフェッショナルな写真**：経営陣の紹介
+
+#### 5. Marpでの実装に向けて
+これらの要素を参考に、Marpテーマを改善する際のポイント：
+- より大胆な余白設定
+- 統一感のあるビジュアル要素の追加
+- タイポグラフィの階層をより明確に
+- グラフィック要素の効果的な配置

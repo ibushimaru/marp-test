@@ -7,6 +7,32 @@ paginate: true
 image: https://ibushimaru.github.io/marp-test/generative-ai-translation-minimal/index.png
 ---
 
+<style>
+/* すべてのスライドでh2タイトルの位置を固定 */
+section:not(.title) h2 {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  right: 60px;
+  margin: 0;
+  padding-bottom: 16px;
+  z-index: 10;
+}
+
+/* h2の後のコンテンツの位置調整 */
+section:not(.title) h2 ~ * {
+  position: relative;
+  top: 80px;
+}
+
+/* h3の位置調整 */
+section:not(.title) h3 {
+  position: relative;
+  top: 60px;
+  margin-bottom: 15px;
+}
+</style>
+
 <!-- _class: title -->
 
 # 今からでも遅くない
@@ -159,6 +185,8 @@ AI時代の翻訳を考える
 **投資効果：** **作業時間が1/3〜1/5に短縮**{.important}
 ::note::（何が短縮されているのかが分からない。プログラミング、情報収集、翻訳は関係ない）::
 
+<br>
+
 ---
 
 ## 私が毎日使う7つのAIツール
@@ -217,6 +245,8 @@ AI時代の翻訳を考える
 
 **画期的：** AIが2人の会話形式で内容を解説する音声が自然
 
+<br>
+
 ---
 
 ## Gemini 2.5 Pro：巨大な記憶力
@@ -240,8 +270,21 @@ const inconsistencies = await gemini.analyze({
 
 ---
 
+## Deep Research：AIの深層分析
 
-::comment::Deep Researchも使ってみよう。::
+### Geminiの新機能でより深い調査が可能に
+
+**Deep Researchでできること**
+- 複雑なトピックの体系的な調査
+- 複数の情報源からの統合分析
+- エビデンスベースの回答生成
+
+**翻訳業務での活用例**
+- ゲームの世界観調査
+- 専門用語の背景理解
+- 文化的コンテキストの深掘り
+
+::note::プロンプト例：「このゲームシリーズの過去作品における魔法システムの変遷を調査して」::
 
 ---
 
@@ -450,6 +493,7 @@ AIがゲームロジックを実装
 - ゲーム知識 × AI = 世界観に合った翻訳
 - 品質管理力 × AI = 大量案件でも一貫性維持
 
+<br>
 
 
 ---
@@ -523,6 +567,12 @@ AIがゲームロジックを実装
 # ご参加ありがとうございました
 
 ## 質問タイム
+
+生成AIについて、翻訳業務での活用について
+なんでもお気軽にご質問ください！
+
+**連絡先：** [メールアドレス]
+**Discord：** LEVELUP #生成AI
 
 ご質問やご意
 聞かせください
