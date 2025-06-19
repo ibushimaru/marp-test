@@ -4,6 +4,7 @@ title: 今からでも遅くない 生成AI
 description: AI時代の翻訳を考える - 生成AIの基礎から実践まで
 theme: minimalTheme
 paginate: true
+image: https://ibushimaru.github.io/marp-test/generative-ai-translation-minimal/index.png
 ---
 
 <!-- _class: title -->

@@ -5,7 +5,7 @@
 set -e
 
 # Variables
-BASE_URL="https://username.github.io/repo"  # Update this with your actual GitHub Pages URL
+BASE_URL="https://ibushimaru.github.io/marp-test"  # Update this with your actual GitHub Pages URL
 SRC_DIR="slides"
 SLIDE_FILENAME="index.md"
 OGP_FILENAME="index.png"
